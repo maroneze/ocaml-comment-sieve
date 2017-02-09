@@ -1,0 +1,33 @@
+                   
+
+(*** three asterisks *)
+          
+                            
+
+                      
+                 
+                         (* ASCII code 27. This is a GCC extension *)
+                  (* just a single quote *)
+                  (* '"' this causes mayhem on the following lines *)
+                     (* "\027" '\027' *)
+                 (* \\'\\ *)
+                     (* \\x47 '\\x47' *)
+             (* "\x0f" '\129' *)
+                                                              (* \\%c *)
+                     
+
+        
+  (* one asterisk (* nested comment *)
+                  (** nested comment with two closing asterisks, multilines and "quotes" **) *)
+                                
+  (** two asterisks *)
+       (** f is to the left *)
+                                                                             (* comment with unbalanced "" inside string and double quotes *)
+                                                         (* escaped backslash inside string: "\\" *)
+                                                     (* escaped quote inside string: "\"" *)
+  (* quoted backslash '\\' *)
+  (* quoted single quote '\'' *)
+                                                         (* several quoted chars *)
+  (* lone backslash: \\ *)
+  (* lone escaped character: \n *)
+    
