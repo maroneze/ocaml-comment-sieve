@@ -1,0 +1,33 @@
+# 1 "test-input.ml"
+
+                       
+let f () =
+  Format.printf "inside f@."
+
+let scan_escape char =
+  match char with
+  | 'e' | 'E' -> '\027'                                              
+  | '\'' -> '\''                           
+  | '"' -> '"'                                                       
+  | '\027' -> '\027'                    
+  | '\\' -> '\\'            
+  | '\x47' -> '\047'                    
+  | other ->                    
+    Printf.printf "Unrecognized escape sequence: \\%c" other;           
+    invalid_arg "bla"
+
+let () =
+                                      
+                                                                                               
+  Format.printf "hello world@.";
+                      
+  f();                        
+  Format.printf "string with unbalanced (* and escaped double quote (\")@.";                                                                 
+  Format.printf "escaped backslash inside string: \\@.";                                            
+  Format.printf "escaped quote inside string: \"@.";                                        
+                             
+                                
+  Format.printf "quote chars: %c %c %c@." '"' '\\' '\'';                           
+                          
+                                  
+  ()
