@@ -1,5 +1,5 @@
 # ocaml-comment-sieve
-Lexer-based filter to extract comments from OCaml code
+Lexer-based filter to extract or remove comments from OCaml code
 
 Code based on [ocamlwc](https://www.lri.fr/~filliatr/software.fr.html).
 
@@ -12,6 +12,8 @@ Outputs the comments from the file, replacing other characters with spaces
 
     ocamlc ocaml-comment-sieve.mll
     ./ocaml-comment-sieve < file.ml
+
+Option `-v` inverts the result, keeping everything *but* comments.
 
 #### Example
 
@@ -31,6 +33,14 @@ Result of `./ocaml-comment-sieve < input.ml`:
         (* this is a comment *)
                                                              (* comment *)
   (* nested (* comments (* are also *) printed *) *)  (* end *)
+```
+
+Result of `./ocaml-comment-sieve -v < input.ml`:
+
+```ocaml
+let _ =                        
+  Format.printf "this is a string (* and not a comment *)@."              
+                                                    ;           ()
 ```
 
 ### Authors
